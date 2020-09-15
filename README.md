@@ -1,9 +1,5 @@
 # Cypress-POM-Automation
-
-## Project Description:
-- This Project automates the scenarios on SauceDemo.com website using Cypress.io
-- Framework uses Page Objects and json files for testdata management
-- Language: JavaScript
+This Project automates SauceDemo.com website using Cypress.io and Page Object Model. Also generates Mochawesome Reports.
 
 
 ## Pre-Requisites
