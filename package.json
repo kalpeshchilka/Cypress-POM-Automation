@@ -1,0 +1,20 @@
+{
+  "name": "scitaraassignment",
+  "version": "1.0.0",
+  "description": "Scitara Cypress Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": ".//node_modules//.bin//cypress run",
+    "edgeTest": "npm run test -- --browser edge",
+    "edgeTestHeadless": "npm run test --headless --browser edge",
+    "cy:open": ".//node_modules//.bin//cypress open"
+  },
+  "author": "kalpesh",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.1.0"
+  },
+  "dependencies": {
+    "mochawesome": "^6.1.1"
+  }
+}

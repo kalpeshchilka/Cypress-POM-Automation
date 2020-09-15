@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-09-11T05:14:23.131Z",
+    "end": "2020-09-11T05:14:37.866Z",
+    "duration": 14735,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6c2942e9-574c-4216-b8ef-5386738fbc23",
+      "title": "",
+      "fullFile": "cypress/integration/examples/sauce_demo.spec.js",
+      "file": "cypress/integration/examples/sauce_demo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "15319c15-c1b5-4e42-b0a2-2a8317282f25",
+          "title": "Sauce Demo Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to the site with valid credentials and verify Cart is Empty",
+              "fullTitle": "Sauce Demo Test Login to the site with valid credentials and verify Cart is Empty",
+              "timedOut": null,
+              "duration": 6217,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var loginPage = new _LoginPage[\"default\"]();\nvar homePage = new _HomePage[\"default\"]();\ncy.visit(Cypress.env('url'));\nloginPage.getUserName().type(this.data.username);\nloginPage.getPassword().type(this.data.password);\nloginPage.getLoginBtn().click();\nhomePage.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "35a84707-ccf9-40fb-85d6-a92f00f419b7",
+              "parentUUID": "15319c15-c1b5-4e42-b0a2-2a8317282f25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add all products in the cart with the word ‘Shirt’ and verify Cart value is equal to the products added",
+              "fullTitle": "Sauce Demo Test Add all products in the cart with the word ‘Shirt’ and verify Cart value is equal to the products added",
+              "timedOut": null,
+              "duration": 998,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var homePage = new _HomePage[\"default\"]();\nvar productNameArray = [];\nvar productCount;\nhomePage.getAllProductName().each(function ($el, index, $list) {\n  if ($el.text().includes(\"Shirt\")) {\n    productNameArray.push($el.text());\n    var productCount = productNameArray.length;\n    index = index - (productCount - 1);\n    homePage.getAddToCartBtn().should('contain.text', 'ADD TO CART').eq(index).click();\n  }\n}).then(function () {\n  productCount = productNameArray.length;\n});\nhomePage.getCartCount().then(function (element) {\n  var cartCount = element.text();\n  expect(productCount).to.eql(parseInt(cartCount));\n});",
+              "err": {},
+              "uuid": "75f02077-3039-43aa-9aaa-3c3ac74e35eb",
+              "parentUUID": "15319c15-c1b5-4e42-b0a2-2a8317282f25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Go to the Cart and verify all products details",
+              "fullTitle": "Sauce Demo Test Go to the Cart and verify all products details",
+              "timedOut": null,
+              "duration": 1471,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var homePage = new _HomePage[\"default\"]();\nvar cartPage = new _CartPage[\"default\"]();\nhomePage.getCartBtn().click();\ncartPage.getAllProductName().each(function ($el, index, $list) {\n  expect($el.text()).to.include(\"Shirt\");\n  cartPage.getProductQty().eq(index).should('contain.text', '1');\n});\ncartPage.getCheckoutBtn().click();\ncartPage.getCheckoutHeader().should('contain.text', 'Checkout: Your Information');",
+              "err": {},
+              "uuid": "cbcdc4ec-d168-48b9-81bb-3aaddf1318ec",
+              "parentUUID": "15319c15-c1b5-4e42-b0a2-2a8317282f25",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Proceed to Final payment and verify order is successfully placed",
+              "fullTitle": "Sauce Demo Test Proceed to Final payment and verify order is successfully placed",
+              "timedOut": null,
+              "duration": 2613,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var checkoutPage = new _CheckoutPage[\"default\"]();\ncheckoutPage.getFirstName().type('test first');\ncheckoutPage.getLastName().type('test last');\ncheckoutPage.getPostalCode().type('11111');\ncheckoutPage.getContinueBtn().click();\ncheckoutPage.getFinishBtn().click();\ncheckoutPage.getOrderPlacedMsg().should('contain.text', 'THANK YOU FOR YOUR ORDER');\ncheckoutPage.getOrderDispatchedMsg().should('contain.text', 'Your order has been dispatched');",
+              "err": {},
+              "uuid": "a0dd8356-2e7d-4c53-b87e-4641a51111f9",
+              "parentUUID": "15319c15-c1b5-4e42-b0a2-2a8317282f25",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "35a84707-ccf9-40fb-85d6-a92f00f419b7",
+            "75f02077-3039-43aa-9aaa-3c3ac74e35eb",
+            "cbcdc4ec-d168-48b9-81bb-3aaddf1318ec",
+            "a0dd8356-2e7d-4c53-b87e-4641a51111f9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11299,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}

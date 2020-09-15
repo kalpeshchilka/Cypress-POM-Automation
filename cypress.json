@@ -1,0 +1,6 @@
+{
+    "env": {
+        "url": "https://www.saucedemo.com/"
+    },
+    "reporter": "mochawesome"
+}
