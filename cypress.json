@@ -1,6 +1,7 @@
 {
-    "env": {
-        "url": "https://www.saucedemo.com/"
-    },
-    "reporter": "mochawesome"
+  "env": {
+    "url": "https://www.saucedemo.com/"
+  },
+  "reporter": "mochawesome",
+  "projectId": "aitrgn"
 }
