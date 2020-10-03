@@ -4,11 +4,14 @@
   "description": "This project automates the sauce demo website using the Cypress and Page Object Model concepts",
   "main": "index.js",
   "scripts": {
+    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}",
+    "cy:verify": "cypress verify",
     "test": "cypress run",
     "edgeTest": "npm run test -- --browser edge",
     "edgeTestHeadless": "npm run test --headless --browser edge",
     "cy:open": ".//node_modules//.bin//cypress open",
-    "cy:record":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367"
+    "cy:record":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367",
+    "cy:record-parallel":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367 --ci-build-id 1 --parallel"
   },
   "author": "kalpesh",
   "license": "ISC",
