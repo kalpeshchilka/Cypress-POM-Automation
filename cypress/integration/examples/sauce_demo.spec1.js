@@ -26,7 +26,6 @@ describe('Sauce Demo Test', () => {
 
     it('Add all products in the cart with the word ‘Shirt’ and verify Cart value is equal to the products added', function () {
         const homePage = new HomePage();
-
         var productNameArray = [];
         var productCount;
         homePage.getAllProductName().each(
@@ -35,7 +34,7 @@ describe('Sauce Demo Test', () => {
                     productNameArray.push($el.text());
                     var productCount = productNameArray.length;
                     index = index - (productCount - 1);
-                    homePage.getAddToCartBtn().should('contain.text', 'ADD TO CART').eq(index).
+                    homePage.getAddToCartBtn().eq(index).
                     click();
                 }
             }).then(function () {
@@ -73,6 +72,5 @@ describe('Sauce Demo Test', () => {
 
         checkoutPage.getFinishBtn().click();
         checkoutPage.getOrderPlacedMsg().should('contain.text', 'THANK YOU FOR YOUR ORDER');
-        checkoutPage.getOrderDispatchedMsg().should('contain.text', 'Your order has been dispatched');
     });
 });

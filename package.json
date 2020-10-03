@@ -1,20 +1,20 @@
 {
-  "name": "scitaraassignment",
+  "name": "Cypress-POM-Automation",
   "version": "1.0.0",
-  "description": "Scitara Cypress Assignment",
+  "description": "This project automates the sauce demo website using the Cypress and Page Object Model concepts",
   "main": "index.js",
   "scripts": {
-    "test": ".//node_modules//.bin//cypress run",
+    "test": "cypress run",
     "edgeTest": "npm run test -- --browser edge",
     "edgeTestHeadless": "npm run test --headless --browser edge",
-    "cy:open": ".//node_modules//.bin//cypress open"
+    "cy:open": ".//node_modules//.bin//cypress open",
+    "cy:record":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367"
   },
   "author": "kalpesh",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^5.1.0"
-  },
-  "dependencies": {
+    "cypress": "^5.1.0",
+    "mocha": "^8.1.3",
     "mochawesome": "^6.1.1"
   }
 }
