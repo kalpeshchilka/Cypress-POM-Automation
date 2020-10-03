@@ -11,7 +11,7 @@
     "edgeTestHeadless": "npm run test --headless --browser edge",
     "cy:open": ".//node_modules//.bin//cypress open",
     "cy:record":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367",
-    "cy:record-parallel":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367 --ci-build-id 1 --parallel"
+    "cy:record-parallel":"cypress run --record --key b56e02d2-8d54-4e3e-a80d-ad899371c367 --ci-build-id 2 --parallel"
   },
   "author": "kalpesh",
   "license": "ISC",
