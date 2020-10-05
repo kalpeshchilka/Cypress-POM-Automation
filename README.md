@@ -1,4 +1,4 @@
-# Cypress-POM-Automation [![Cypress-POM-Automation](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/aitrgn&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/aitrgn/runs)   [![<CircleCI>](https://circleci.com/gh/kalpeshchilka/Cypress-POM-Automation.svg?style=svg)](https://app.circleci.com/pipelines/github/kalpeshchilka)
+# Cypress-POM-Automation [![Cypress-POM-Automation](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/aitrgn&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/aitrgn/runs)   [![<CircleCI>](https://circleci.com/gh/kalpeshchilka/Cypress-POM-Automation.svg?style=shield)](https://app.circleci.com/pipelines/github/kalpeshchilka)
 
 This Project automates SauceDemo.com website using Cypress.io and Page Object Model. Also generates Mochawesome Reports.
 
