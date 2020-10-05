@@ -1,4 +1,6 @@
 # Cypress-POM-Automation
+[![Cypress-POM-Automation](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/aitrgn&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/aitrgn/runs)
+
 This Project automates SauceDemo.com website using Cypress.io and Page Object Model. Also generates Mochawesome Reports.
 
 
