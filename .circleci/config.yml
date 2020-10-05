@@ -1,21 +1,33 @@
-version: 2.1
-orbs:
-  cypress: cypress-io/cypress@1
+version: 2
+jobs:
+  test:
+    docker:
+      - image: cypress/included:3.3.2
+    steps:
+      - checkout
+      # restore folders with npm dependencies and Cypress binary
+      - restore_cache:
+          keys:
+            - cache-{{ checksum "package.json" }}
+      # install npm dependencies and Cypress binary
+      # if they were cached, this step is super quick
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run: npm run cy:verify
+      # save npm dependencies and Cypress binary for future runs
+      - save_cache:
+          key: cache-{{ checksum "package.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      # start server before starting tests
+      - run:
+          background: true
+      - run: npm run cy:record
+
 workflows:
+  version: 2
   build:
     jobs:
-      # first get the source code and install npm dependencies
-      - cypress/install:
-          # run a custom app build step
-          build: 'npm run cy:record-parallel'
-      - cypress/run:
-          # make sure app has been installed and built
-          # before running tests across multiple machines
-          # this avoids installing same dependencies 10 times
-          requires:
-            - cypress/install
-          record: true # record results on Cypress Dashboard
-          parallel: true # split all specs across machines
-          parallelism: 2 # use 4 CircleCI machines to finish quickly
-          group: 'all tests' # name this group "all tests" on the dashboard
-          start: 'npm start' # start server before running tests
+      - test
