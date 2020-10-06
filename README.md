@@ -4,16 +4,21 @@ This Project automates SauceDemo.com website using Cypress.io and Page Object Mo
 
 
 ## Pre-Requisites
-- Install Microsoft Edge
+- Install latest Chrome browser
 - Install Node.js (6 or higher)
 
 
 ## Setup
-- To install the project dependencies = npm install
+- To install the project dependencies by running command: `npm install`
 
 ## Run Test
-- Open the Cypress console by running = npm run cy:open
-- Run the test on Microsoft Edge browser using command = npm run edgeTest
+- Open the Cypress console by running command: `npm run cy:open`
+- Run the test on Chrome browser in headed mode using command: ` npm run test:headed`
+- Run the test on Chrome browser in headedless mode using command: `npm run test:headless`
 
 ## Mochawesome Report
-- Generates mochawesome HTML reports at project directory: /mochawesome-report/mochawesome.html 
+- Generates mochawesome HTML reports at project directory: `/mochawesome-report/mochawesome.html`
+
+## Other Features:
+- On every code push/change to master branch it run the entire build on CircleCI and Cypress Dashboard as a pre-check
+- Can also run this project on Docker using command: `sh docker-cy-run.sh`
