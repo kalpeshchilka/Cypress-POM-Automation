@@ -91,4 +91,4 @@ nb-configuration.xml
 node_modules
 screenshots/
 cypress/videos/*
-mochawesome-report
+mochawesome-report/
