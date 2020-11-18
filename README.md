@@ -19,6 +19,6 @@ This Project automates SauceDemo.com website using Cypress.io and Page Object Mo
 ## Mochawesome Report
 - Generates mochawesome HTML reports at project directory: `/mochawesome-report/mochawesome.html`
 
-## Other Features:
-- On every code push/change to master branch it run the entire build on CircleCI and Cypress Dashboard as a pre-check
-- Can also run this project on Docker using command: `sh docker-cy-run.sh`
+## Other Features
+- On every code push/change to master branch it runs the entire build on CircleCI and Cypress Dashboard as post deployment check.
+- We can also run this project on Docker using command: `sh docker-cy-run.sh`
