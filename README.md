@@ -9,7 +9,7 @@ This Project automates SauceDemo.com website using Cypress.io and Page Object Mo
 
 
 ## Setup
-- To install the project dependencies by running command: `npm install`
+- Install the project dependencies by running command: `npm install`
 
 ## Run Test
 - Open the Cypress console by running command: `npm run cy:open`
